@@ -19,10 +19,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.Platform;
 
 import java.util.*;
-public class DemoTest {
+public class DemoFirefox {
   private WebDriver driver;
   private Map<String, Object> vars;
-  DesiredCapabilities capability = DesiredCapabilities.chrome();
+  DesiredCapabilities capability = DesiredCapabilities.firefox();
   JavascriptExecutor js;
   @Before
   public void setUp() throws MalformedURLException {
@@ -34,9 +34,9 @@ public class DemoTest {
     driver = new ChromeDriver();
     */
 	 // For remote
-	capability.setBrowserName("chrome");
+	capability.setBrowserName("firefox");
 	capability.setPlatform(Platform.LINUX);
-	String nodeUrlChrome = "http://172.17.0.3:5555/wd/hub";
+	String nodeUrlChrome = "http://172.17.0.4:5555/wd/hub";
 	driver = new RemoteWebDriver(
 			new URL(nodeUrlChrome), capability);
     js = (JavascriptExecutor) driver;
